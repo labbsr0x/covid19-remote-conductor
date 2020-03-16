@@ -1,0 +1,7 @@
+version: '3.7'
+
+services:
+
+  conductor-backy:
+    build: .
+    image: ${CONTAINER_RELEASE_IMAGE}    
