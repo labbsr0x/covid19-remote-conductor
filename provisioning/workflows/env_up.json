@@ -10,18 +10,11 @@
             "inputParameters": {
                 "user": "${workflow.input.cert}"
             }
-        },
-        {
-            "name": "install-cert",
-            "taskReferenceName": "ic",
-            "type": "SIMPLE",
-            "inputParameters": {
-                "user": "${workflow.input.cert}"
-            }
         }
     ],
     "outputParameters": {
-        "cert": "${sopvn.output.link}"
+        "link": "${sopvn.output.link}",
+        "cert": "${sopvn.output.cert}"
     },
     "failureWorkflow": "cleanup_encode_resources",
     "restartable": true,
