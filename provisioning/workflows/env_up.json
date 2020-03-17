@@ -1,0 +1,30 @@
+{
+    "name": "env_up",
+    "description": "starts up openVPN servers",
+    "version": 1,
+    "tasks": [
+        {
+            "name": "start-openVPN",
+            "taskReferenceName": "sopvn",
+            "type": "SIMPLE",
+            "inputParameters": {
+                "user": "${workflow.input.cert}"
+            }
+        },
+        {
+            "name": "install-cert",
+            "taskReferenceName": "ic",
+            "type": "SIMPLE",
+            "inputParameters": {
+                "user": "${workflow.input.cert}"
+            }
+        }
+    ],
+    "outputParameters": {
+        "cert": "${sopvn.output.link}"
+    },
+    "failureWorkflow": "cleanup_encode_resources",
+    "restartable": true,
+    "workflowStatusListenerEnabled": true,
+    "schemaVersion": 2
+}

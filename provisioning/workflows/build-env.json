@@ -1,0 +1,29 @@
+{
+    "name": "build_env",
+    "description": "builds up remote work env for a user",
+    "version": 1,
+    "tasks": [
+        {
+            "name": "build_vm",
+            "taskReferenceName": "bvm",
+            "type": "SIMPLE",
+            "inputParameters": {
+                "user": "${workflow.input.user}",
+                "name": "${workflow.input.name}",
+                "cert": "${workflow.input.cert}"
+            }
+        },
+        {
+            "name": "store_vm",
+            "taskReferenceName": "svm",
+            "type": "SIMPLE"
+        }
+    ],
+    "outputParameters": {
+        "cert": "${bvm.output.link}"
+    },
+    "failureWorkflow": "cleanup_encode_resources",
+    "restartable": true,
+    "workflowStatusListenerEnabled": true,
+    "schemaVersion": 2
+}

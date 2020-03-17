@@ -1,13 +1,13 @@
 [
     {
-        "name": "distribute-certificate",
+        "name": "start-openVPN",
         "retryCount": 3,
         "timeoutSeconds": 3600,
         "inputKeys": [
             "cert"
           ],
         "outputKeys": [
-            "result"
+            "link"
           ],
         "timeoutPolicy": "TIME_OUT_WF",
         "retryLogic": "FIXED",

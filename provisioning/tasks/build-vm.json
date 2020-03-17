@@ -1,14 +1,15 @@
 [
     {
-        "name": "issue_certificate",
+        "name": "build_vm",
         "retryCount": 3,
         "timeoutSeconds": 3600,
         "inputKeys": [
             "user",
-            "name"
+            "name",
+            "cert"
           ],
         "outputKeys": [
-            "cert"
+            "result"
           ],
         "timeoutPolicy": "TIME_OUT_WF",
         "retryLogic": "FIXED",
